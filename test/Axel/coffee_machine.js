@@ -7,18 +7,29 @@ $(document).ready(function(){
     let doSelect
     let drink
   };
-  $('#btn-b').click(function(){
-    console.log("button clicked look next")
-    if (this === ".led-off.led-drink") {
-      $(this).removeClass("led-off")
-      $(this).addClass("led-on")
-      console.log("click work");
-  };
-
+  $(".btn-b").click(function(){
+    if (doSelect === true) {
+      $(".led-off.led-drink").attr("class", "led-on")
+    }
+    else {
+      $(this).attr("class", "led-off");
+    }
   });
 });
 
 
+
+///////////////////////////////////////////////////////
+// $('#btn-b').click(function(){
+//   console.log("button clicked look next")
+//   if (this === ".led-off.led-drink") {
+//     $(this).removeClass("led-off")
+//     $(this).addClass("led-on")
+//     console.log("click work");
+// };
+//
+// });
+/////////////////////////////////////////////////
 // $('.btn-ad').click(function(){
 //
 //   console.log("");
