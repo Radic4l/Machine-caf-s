@@ -1,6 +1,12 @@
 $(document).ready(function(){
-  $('.btn-ad').click(function(){
-    console.log("clicked");
-    $(".boisson1").toggleClass("boisson1V boisson1H")
+$('#boisson').click(function(){
+    console.log("clicked")
+    $('#boisson').removeClass("boisson boisson1 boisson2").addClass("boisson");
+    $('#boisson').toggleClass("boisson boisson2");
   });
+  // $('#boisson').click(function(){
+  //   console.log("clicked reboot");
+  //   $(this).removeClass("boisson").addClass("boisson2");
+  // });
+
 });
