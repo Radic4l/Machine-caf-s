@@ -21,7 +21,18 @@ $(document).ready(function(){
     	    $('.btnThe').attr("src", '../../asset/img/Vue1/Choixboisson_tea.png');
     	};
     };
-
+    	$('.btnPlus').mousedown(function(){
+    		$('.btnPlus').attr('src','../../asset/img/Vue1/Selection_sucre/button-+-active.png')
+    	})
+    	$('.btnPlus').mouseup(function(){
+    		$('.btnPlus').attr('src','../../asset/img/Vue1/Selection_sucre/button-+-inactive.png')
+    	})
+    	   $('.btnMoins').mousedown(function(){
+    		$('.btnMoins').attr('src','../../asset/img/Vue1/Selection_sucre/button---active.png')
+    	})
+    	$('.btnMoins').mouseup(function(){
+    		$('.btnMoins').attr('src','../../asset/img/Vue1/Selection_sucre/button---inactive.png')
+    	})
 
 		let sugar = 0;
 		let nbSugar = [];
