@@ -1,20 +1,99 @@
 $(document).ready(function(){
-	function selectDrink(doSelect, drink){
-		if (doSelect === true && drink === 'the'){
-			$('.btnThe').attr('src','../../asset/img/Vue1/Tea_click.png')
-		}
-		else{
-			(doSelect === false)
-			$('.btnThe').attr('src','../../asset/img/Vue1/Choixboisson_tea.png')
-		}
-	}
+	function selectDrink(doSelect,drink){
+    	if (doSelect === true && drink === 'latte'){
+    	    $('.btnLat').attr("src", "../../asset/img/Vue1/Latte_click.png");
+    	}else{
+    	    $('.btnLat').attr("src", "../../asset/img/Vue1/Choixboisson_Latte.png");
+    	};
+    	if (doSelect === true && drink === 'expresso'){
+    	    $('.btnExp').attr("src", "../../asset/img/Vue1/expresso_click.png");
+    	}else{
+    	    $('.btnExp').attr("src", "../../asset/img/Vue1/Choixboisson_expresso.png");
+    	};
+    	if (doSelect === true && drink === 'chocolat'){
+    	    $('.btnChoc').attr("src", "../../asset/img/Vue1/Chocolat_click.png");
+    	}else{
+    	    $('.btnChoc').attr("src", "../../asset/img/Vue1/Choixboisson_chocolat.png");
+    	};
+    	if (doSelect === true && drink === 'tea'){
+    	    $('.btnThe').attr("src",'../../asset/img/Vue1/Tea_click.png');
+    	}else{
+    	    $('.btnThe').attr("src", '../../asset/img/Vue1/Choixboisson_tea.png');
+    	};
+    };
 
-	$('.btnThe').click(function(){
-		selectDrink(true, 'the')
-	})
-	$('.btnThe').dblclick(function(){
-		selectDrink(false, 'the')
-	});
 
+		let sugar = 0;
+		let nbSugar = [];
+		$('.btnPlus').click(function(){
+			if (sugar < 5){
+				sugar = sugar + 1;
+				if (sugar === 1){
+					$('.sugar1').css('opacity', 1);
+				};
+				if (sugar === 2){
+					$('.sugar2').css('opacity', 1);
+				};
+				if (sugar === 3){
+					$('.sugar3').css('opacity', 1);
+				};
+				if (sugar === 4){
+					$('.sugar4').css('opacity', 1);
+				};
+				if (sugar === 5){
+					$('.sugar5').css('opacity', 1);
+				};
+			}
+			console.log(sugar);
+		});
+			$('.btnMoins').click(function(){
+			if (sugar > 0 ){
+				sugar = sugar - 1;
+				if (sugar === 0){
+					$('.sugar1').css('opacity', 0);
+				};
+				if (sugar === 1){
+					$('.sugar2').css('opacity', 0);
+				};
+				if (sugar === 2){
+				
+					$('.sugar3').css('opacity', 0);
+				};
+				if (sugar === 3){
+				
+					$('.sugar4').css('opacity', 0);
+				};
+				if (sugar === 4){
+					
+					$('.sugar5').css('opacity', 0);
+				};
+				
+			}
+			console.log(sugar);
+		});
 
+	$('.btnLat').click(function(){
+        selectDrink(true, 'latte');
+    });
+    $('.btnLat').dblclick(function(){    
+        selectDrink(false, 'latte');// Implémentez​ ​une​ ​fonction​ ​​resetDrink()​ ​​qui​ ​désélectionne​ ​toutes​ ​les​ ​boissons: le dblclick permet de reset les drink//
+    });
+    $('.btnExp').click(function(){
+        selectDrink(true, 'expresso');
+    });
+    $('.btnExp').dblclick(function(){    
+        selectDrink(false, 'expresso');
+    });
+    $('.btnChoc').click(function(){
+        selectDrink(true, 'chocolat');
+    });
+    $('.btnChoc').dblclick(function(){    
+        selectDrink(false, 'chocolat');
+    });
+    $('.btnThe').click(function(){
+        selectDrink(true, 'tea');
+    });
+    $('.btnThe').dblclick(function(){    
+        selectDrink(false, 'tea');
+    });
 });
