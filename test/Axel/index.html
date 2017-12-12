@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Machine à Cafés</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="my_style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="coffee_machine.js"></script>
+</head>
+<body>
 
-    <footer>
-    </footer>
-  </body>
+    <div class="price">0.00</div>
+    <div class="euros"></div>
+    <div class="coinsSlot"></div>
+
+    <div class="sugar" style="top:175px;">
+      <div id="btn+" class="button" style="left:10px;"></div>
+      <div class="led-on led-drink" style="left:50px;top:0px;"></div>
+      <div class="led-on led-drink" style="left:75px;top:0px;"></div>
+      <div class="led-off led-drink" style="left:100px;top:0px;"></div>
+      <div class="led-off led-drink" style="left:125px;top:0px;"></div>
+      <div id="btn-" class="button"></div>
+    </div>
+
+    <div class="drink" style="top:205px;">
+      <div class="drink-name"><font style="color:#fff">café</font></div>
+      <div id="led-B" class="led-off led-drink" style="left:130px;"></div>
+      <div id="btn-b" class="button"></div>
+    </div>
+
+</body>
+</body>
 </html>
