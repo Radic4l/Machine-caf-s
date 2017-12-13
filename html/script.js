@@ -38,7 +38,7 @@ $(document).ready(function(){
             $('.5cts').attr('src', 'img/Vue1/5cen_selec.png')
           }
     };
-
+////////////////// BUTTON TO SELECT DRINK /////
     $('.btnLat').click(function(){
         selectDrink(true, 'latte');
         $('.boiChoi').text('Latte – 0.60 cts');
@@ -142,10 +142,9 @@ $(document).ready(function(){
       }
       console.log(sugar);
     });
+////////////////////// ADD COINS/////////
+let prix = 0.50;
 
-
-
-    //Function addCoin//
     let coins_ser = 0; 
     function addCoin(coin){
       if (coin === '2euros'){
@@ -161,6 +160,14 @@ $(document).ready(function(){
       }else if (coin === '5cts'){
         coins_ser = coins_ser + 0.05;
       };
+      if (coins_ser > prix){
+          let aRendre = coins_ser-prix;
+          if (aRendre > 1){
+            $('.messageRendu p').text('A rendre: ' +(aRendre).toFixed(2)+ ' €');
+          }else{
+            $('.messageRendu p').text('A rendre: ' +(aRendre).toFixed(2)+ ' cts');
+          }
+      }
       console.log(coins_ser)
     };
 
@@ -192,6 +199,7 @@ $(document).ready(function(){
       $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
     });
 
+///////////////////////////  FUNCTION TO RESET ALL ///////
     function resetAll(){
         $('.affPieces').text(' ');
         coins_ser = 0;
@@ -200,6 +208,8 @@ $(document).ready(function(){
         $('.coins input').prop('disabled', true);
         sugar = 0;
         $('.sugar1, .sugar2, .sugar3, .sugar4, .sugar5').css('opacity', 0);
+        aRendre = 0;
+        $('.monnaie').text('');
 
     }
     $('.reset').click(function(){
