@@ -6,39 +6,71 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../asset/style.css">
-    <script src="../asset/javascript/script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
   </head>
   <body>
     <div class="container">
-      <div class='row'>
-          <div class='col-ms-2'>
-            <img src="../asset/img/Vue1/Choixboisson_tea.png" class="btnThe">
+        <div class='row'>
+            <div class='col-ms-2'>
+                <img src="img/Vue1/Choixboisson_tea.png" class="btnThe">
+            </div>
+            <div class="col-ms-2">
+                <img src="img/Vue1/Selection_sucre/button---inactive.png" class="btnMoins">
+            </div>
+            <div class="col-ms-2">
+                <img src="img/Vue1/Selection_sucre/button-+-inactive.png" class="btnPlus">
+            </div>
+        </div>
+        <div>
+            <img src="img/Vue1/Choixboisson_Chocolat.png" class="btnChoc">
+        </div>
+        <div>
+            <img src="img/Vue1/Choixboisson_Latte.png" class="btnLat">
+        </div>
+        <div>
+          <img src="img/Vue1/Choixboisson_expresso.png" class="btnExp">
+        </div>    
+        <div class='nbsugar container'>
+          <img class="sugar1" src="img/Vue1/Selection_sucre/1_sucre.png">
+          <img class="sugar2" src="img/Vue1/Selection_sucre/2_sucres.png">
+          <img class="sugar3" src="img/Vue1/Selection_sucre/3_sucres.png">
+          <img class="sugar4" src="img/Vue1/Selection_sucre/4_sucres.png">
+          <img class="sugar5" src="img/Vue1/Selection_sucre/5_sucres.png">
+        </div>
+       
+        <div class='coins container'>
+            <div class='row'>
+                <div class='col-ms-2'>
+                    <input type='image' class='2euros' src='img/Vue1/2euros_selec.png' disabled="true">
+                    <input type='image' class='1euro' src='img/Vue1/1euro_selec.png' disabled="true">
+                </div>  
+                <div class='col-ms-2'>
+                    <input type='image' class='50cts' src='img/Vue1/50cen_selec.png' disabled="true">
+                    <input type='image' class='20cts' src='img/Vue1/20cen_selec.png' disabled="true">
+                </div>
+                <div class='col-ms-2'>
+                    <input type='image' class='10cts' src='img/Vue1/10cen_selec.png' disabled="true">
+                    <input type='image' class='5cts' src='img/Vue1/5cen_selec.png' disabled="true">
+                </div>
+            </div>
+        </div>
+        <div class='container'>
+            <input type='image' class='reset' src="img/Vue1/button-cancel.png">
+        </div>
+          <div class='row'>
+            <div class='messageBoisson'>
+                <p class="boiChoi"></p>
+            </div>
           </div>
-          <div class="col-ms-2">
-            <img src="../asset/img/Vue1/Selection_sucre/button---inactive.png" class="btnMoins">
+          <div class="row">
+            <div class='messagePieces'>
+                <p class='affPieces'></p>
+            </div>
           </div>
-          <div class="col-ms-2">
-            <img src="../asset/img/Vue1/Selection_sucre/button-+-inactive.png" class="btnPlus">
-          </div>
-      </div>
-      <div>
-        <img src="../asset/img/Vue1/Choixboisson_Chocolat.png" class="btnChoc">
-      </div>
-      <div>
-        <img src="../asset/img/Vue1/Choixboisson_Latte.png" class="btnLat">
-      </div>
-      <div>
-        <img src="../asset/img/Vue1/Choixboisson_expresso.png" class="btnExp">
-      </div>
-    </div>
-    <div class='nbsugar'>
-      <img class="sugar1" src="../asset/img/Vue1/Selection_sucre/1_sucre.png">
-      <img class="sugar2" src="../asset/img/Vue1/Selection_sucre/2_sucres.png">
-      <img class="sugar3" src="../asset/img/Vue1/Selection_sucre/3_sucres.png">
-      <img class="sugar4" src="../asset/img/Vue1/Selection_sucre/4_sucres.png">
-      <img class="sugar5" src="../asset/img/Vue1/Selection_sucre/5_sucres.png">
-    </div>
+            <p class="monnaie"></p>
+    </div>    
+   
     <footer>
     </footer>
   </body>
