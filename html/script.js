@@ -1,42 +1,42 @@
 $(document).ready(function(){
 /////////////////Sergio/////////////////
-function selectDrink(doSelect,drink){
-      if (doSelect === true && drink === 'latte'){
-          $('.btnLat').attr("src", "img/Vue1/Latte_click.png");
-      }else{
-          $('.btnLat').attr("src", "img/Vue1/Choixboisson_Latte.png");
-      };
-      if (doSelect === true && drink === 'expresso'){
-          $('.btnExp').attr("src", "img/Vue1/expresso_click.png");
-      }else{
-          $('.btnExp').attr("src", "img/Vue1/Choixboisson_expresso.png");
-      };
-      if (doSelect === true && drink === 'chocolat'){
-          $('.btnChoc').attr("src", "img/Vue1/Chocolat_click.png");
-      }else{
-          $('.btnChoc').attr("src", "img/Vue1/Choixboisson_chocolat.png");
-      };
-      if (doSelect === true && drink === 'tea'){
-          $('.btnThe').attr("src",'img/Vue1/Tea_click.png');
-      }else{
-          $('.btnThe').attr("src", 'img/Vue1/Choixboisson_tea.png');
-      };
-      if (doSelect === true){
-        $('.2euros').attr('src', 'img/Vue1/2_euros.png')
-        $('.1euro').attr('src', 'img/Vue1/1_euros.png')
-        $('.50cts').attr('src', 'img/Vue1/50_cen.png')
-        $('.20cts').attr('src', 'img/Vue1/20_cen.png')
-        $('.10cts').attr('src', 'img/Vue1/10_cen.png')
-        $('.5cts').attr('src', 'img/Vue1/5_cen.png')
-      }
-      else{
-        $('.2euros').attr('src','img/Vue1/2euros_selec.png')
-        $('.1euro').attr('src', 'img/Vue1/1euro_selec.png')
-        $('.50cts').attr('src', 'img/Vue1/50cen_selec.png')
-        $('.20cts').attr('src', 'img/Vue1/20cen_selec.png')
-        $('.10cts').attr('src', 'img/Vue1/10cen_selec.png')
-        $('.5cts').attr('src', 'img/Vue1/5cen_selec.png')
-      }
+    function selectDrink(doSelect,drink){
+          if (doSelect === true && drink === 'latte'){
+              $('.btnLat').attr("src", "img/Vue1/Latte_click.png");
+          }else{
+              $('.btnLat').attr("src", "img/Vue1/Choixboisson_Latte.png");
+          };
+          if (doSelect === true && drink === 'expresso'){
+              $('.btnExp').attr("src", "img/Vue1/expresso_click.png");
+          }else{
+              $('.btnExp').attr("src", "img/Vue1/Choixboisson_expresso.png");
+          };
+          if (doSelect === true && drink === 'chocolat'){
+              $('.btnChoc').attr("src", "img/Vue1/Chocolat_click.png");
+          }else{
+              $('.btnChoc').attr("src", "img/Vue1/Choixboisson_chocolat.png");
+          };
+          if (doSelect === true && drink === 'tea'){
+              $('.btnThe').attr("src",'img/Vue1/Tea_click.png');
+          }else{
+              $('.btnThe').attr("src", 'img/Vue1/Choixboisson_tea.png');
+          };
+          if (doSelect === true){
+            $('.2euros').attr('src', 'img/Vue1/2_euros.png')
+            $('.1euro').attr('src', 'img/Vue1/1_euros.png')
+            $('.50cts').attr('src', 'img/Vue1/50_cen.png')
+            $('.20cts').attr('src', 'img/Vue1/20_cen.png')
+            $('.10cts').attr('src', 'img/Vue1/10_cen.png')
+            $('.5cts').attr('src', 'img/Vue1/5_cen.png')
+          }
+          else{
+            $('.2euros').attr('src','img/Vue1/2euros_selec.png')
+            $('.1euro').attr('src', 'img/Vue1/1euro_selec.png')
+            $('.50cts').attr('src', 'img/Vue1/50cen_selec.png')
+            $('.20cts').attr('src', 'img/Vue1/20cen_selec.png')
+            $('.10cts').attr('src', 'img/Vue1/10cen_selec.png')
+            $('.5cts').attr('src', 'img/Vue1/5cen_selec.png')
+          }
     };
 
     $('.btnLat').click(function(){
@@ -47,37 +47,37 @@ function selectDrink(doSelect,drink){
     $('.btnLat').dblclick(function(){    
         selectDrink(false, 'latte');// Implémentez​ ​une​ ​fonction​ ​​resetDrink()​ ​​qui​ ​désélectionne​ ​toutes​ ​les​ ​boissons: le dblclick permet de reset les drink//
         $('.boiChoi').text(' ');
-        $('input').prop('disabled', true);
+        $('.coins input').prop('disabled', true);
     });
     $('.btnExp').click(function(){
         selectDrink(true, 'expresso');
-        $('.boiChoi').text('Expresso');
-        $('input').prop('disabled', false);
+        $('.boiChoi').text('Expresso – 0.50 cts');
+        $('.coins input').prop('disabled', false);
     });
     $('.btnExp').dblclick(function(){    
         selectDrink(false, 'expresso');
         $('.boiChoi').text(' ');
-        $('input').prop('disabled', true);
+        $('.coins input').prop('disabled', true);
     });
     $('.btnChoc').click(function(){
         selectDrink(true, 'chocolat');
-        $('.boiChoi').text('Chocolat');
-        $('input').prop('disabled', false);
+        $('.boiChoi').text('Chocolat – 0.60 cts');
+        $('.coins input').prop('disabled', false);
     });
     $('.btnChoc').dblclick(function(){    
         selectDrink(false, 'chocolat');
         $('.boiChoi').text(' ');
-        $('input').prop('disabled', true);
+        $('.coins input').prop('disabled', true);
     });
     $('.btnThe').click(function(){
         selectDrink(true, 'tea');
-        $('.boiChoi').text('Thé');
-        $('input').prop('disabled', false);
+        $('.boiChoi').text('Thé – 0.50 cts');
+        $('.coins input').prop('disabled', false);
     });
     $('.btnThe').dblclick(function(){    
         selectDrink(false, 'tea');
         $('.boiChoi').text(' ');
-        $('input').prop('disabled', true);
+        $('.coins input').prop('disabled', true);
     });
 
 ///////////////////Button + and - sugar when clicked //////////////
@@ -171,28 +171,41 @@ function selectDrink(doSelect,drink){
 
     $('.1euro').click(function(){
       addCoin('1euro');
-      $('.affPieces').text('Montant inséré: ' +coins_ser);
+      $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
     });
 
     $('.50cts').click(function(){
       addCoin('50cts');
-      $('.affPieces').text('Montant inséré: ' +coins_ser);
+      $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
     });
-
     $('.20cts').click(function(){
       addCoin('20cts');
-      $('.affPieces').text('Montant inséré: ' +coins_ser);
+      $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
     });
-
     $('.10cts').click(function(){
       addCoin('10cts');
-      $('.affPieces').text('Montant inséré: ' +coins_ser);
+      $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
     });
 
     $('.5cts').click(function(){
       addCoin('5cts');
-      $('.affPieces').text('Montant inséré: ' +coins_ser);
+      $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
     });
+
+    function resetAll(){
+        $('.affPieces').text(' ');
+        coins_ser = 0;
+        $('.boiChoi').text(' ');
+        selectDrink(false);
+        $('.coins input').prop('disabled', true);
+        sugar = 0;
+        $('.sugar1, .sugar2, .sugar3, .sugar4, .sugar5').css('opacity', 0);
+
+    }
+    $('.reset').click(function(){
+        resetAll();
+    })
+
     $('.reset').mousedown(function(){
       $('.reset').attr('src','img/Vue1/button-cancel-pressed.png')
     })
