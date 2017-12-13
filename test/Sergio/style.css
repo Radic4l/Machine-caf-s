@@ -32,6 +32,28 @@ body{
 	opacity: 0;
 }
 .nbsugar{
-	margin-left: 980px;
+	margin-left: 760px;
 	margin-top: -670px;
+}
+.coins{
+	text-align: center;
+	margin-left: 290px;
+	margin-top: 100px;
+}
+.messageBoisson{
+	color: red;
+	font-size: 25px;
+	margin-left: 490px;
+	margin-top: -285px;
+
+}
+.messagePieces{
+	color: red;
+	font-size: 25px;
+	margin-left: 490px;
+	margin-top: -260px;
+}
+.reset{
+	margin-left: 818px;
+	margin-top: 43px;
 }
