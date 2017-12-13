@@ -42,16 +42,16 @@ body{
 }
 .messageBoisson{
 	color: red;
-	font-size: 25px;
+	font-size: 20px;
 	margin-left: 490px;
-	margin-top: -285px;
+	margin-top: -385px;
 
 }
 .messagePieces{
 	color: red;
-	font-size: 25px;
+	font-size: 20px;
 	margin-left: 490px;
-	margin-top: -260px;
+	margin-top: -360px;
 }
 .reset{
 	margin-left: 818px;

@@ -41,7 +41,7 @@ $(document).ready(function(){
     $('.btnLat').click(function(){
         selectDrink(true, 'latte');
         $('.boiChoi').text('Latte – 0.60 cts');
-        $('input').prop('disabled', false);
+        $('.coins input').prop('disabled', false);
     });
     $('.btnLat').dblclick(function(){    
         selectDrink(false, 'latte');// Implémentez​ ​une​ ​fonction​ ​​resetDrink()​ ​​qui​ ​désélectionne​ ​toutes​ ​les​ ​boissons: le dblclick permet de reset les drink//
@@ -70,7 +70,7 @@ $(document).ready(function(){
     });
     $('.btnThe').click(function(){
         selectDrink(true, 'tea');
-        $('.boiChoi').text('The');
+        $('.boiChoi').text('Thé');
         $('input').prop('disabled', false);
     });
     $('.btnThe').dblclick(function(){    
@@ -165,7 +165,7 @@ $(document).ready(function(){
 
     $('.2euros').click(function(){
     	addCoin('2euros');
-    	$('.affPieces').text('Montant inséré: ' +coins_ser);
+    	$('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
     });
 
     $('.1euro').click(function(){
