@@ -71,9 +71,19 @@ body{
 .monnayeur{
 	margin-left: 795px;
 	margin-top: -180px;
+
+}
+.pieces{
+	margin-left: -100px;
+	margin-top: 0px;
+	z-index: 2;
+	opacity: 0;
 }
 .btn-valider{
 	margin-left: 550px;
 	margin-top: -1630px; 
+}
+.prendMoney{
+	z-index: 1;
 }
 /*---------------------------------------------------------------------*/

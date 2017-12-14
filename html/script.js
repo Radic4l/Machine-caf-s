@@ -144,9 +144,8 @@ $(document).ready(function(){
     });
 ////////////////////// ADD COINS/////////
 let prix = 0.50;
+let coins_ser = 0; 
 
-
-    let coins_ser = 0; 
     function addCoin(coin){
       if (coin === '2euros'){
         coins_ser = coins_ser + 2;
@@ -168,41 +167,42 @@ let prix = 0.50;
           }else{
             $('.messageRendu p').text('A rendre: ' +(aRendre).toFixed(2)+ ' cts');
           }
+
       }
       console.log(coins_ser)
     };
     $('.2euros').click(function(){
       addCoin('2euros');
       $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
-      renduMonnaie(coins_ser,prix)
+      /*renduMonnaie(coins_ser,prix)*/
     });
 
     $('.1euro').click(function(){
       addCoin('1euro');
       $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
-      renduMonnaie(coins_ser,prix)
+      /*renduMonnaie(coins_ser,prix)*/
     });
 
     $('.50cts').click(function(){
       addCoin('50cts');
       $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
-      renduMonnaie(coins_ser,prix)
+      /*renduMonnaie(coins_ser,prix)*/
     });
     $('.20cts').click(function(){
       addCoin('20cts');
       $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
-      renduMonnaie(coins_ser,prix)
+      /*renduMonnaie(coins_ser,prix)*/
     });
     $('.10cts').click(function(){
       addCoin('10cts');
       $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
-      renduMonnaie(coins_ser,prix)
+      /*renduMonnaie(coins_ser,prix)*/
     });
 
     $('.5cts').click(function(){
       addCoin('5cts');
       $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
-      renduMonnaie(coins_ser,prix)
+      /*renduMonnaie(coins_ser,prix)*/
     });
   let piecesExist = [2,1,0.50,0.20,0.10,0.05]; // liste de pieces disponible
   let piecesDispo = [5,5,5,5,5,5] // numero de pieces disponible de chaque valeur
@@ -219,9 +219,9 @@ function renduMonnaie(sommeEntree, cout){
         }     
     } 
     /////////// Info de pieces rendu //////
-    /*for(y = 0; y< piecesTotal.length; y++){
+    for(y = 0; y< piecesTotal.length; y++){
         console.log(' • ' + (piecesTotal[y]-piecesDispo[y]) +' pieces de ' + piecesExist[y]);
-    }*/
+    }
   ////////////// Info de pieces restantes ////////
   for (let x = 0; x < piecesExist.length; x++) 
     {
@@ -241,79 +241,15 @@ function renduMonnaie(sommeEntree, cout){
       $('.messagePieces').hide();
       $('.messageRendu').hide();
       $('.boiChoi').hide();
+      renduMonnaie(coins_ser,prix);
       for(let y = 0; y< piecesTotal.length; y++){
-        console.log(' • ' + (piecesTotal[y]-piecesDispo[y]) +' pieces de ' + piecesExist[y]);
         if((piecesTotal[y]-piecesDispo[y])>0){
           $('.messageBoisson').append("<p class='infoPiecesRendues'>' • '" + (piecesTotal[y]-piecesDispo[y]) +"' pieces de ' "+ piecesExist[y]);
-        
+                  $('.pieces').css('opacity',1);
         }
       }
   });
-/*$('.btn-valider').click(function(){
-  $('.messagePieces').hide();
-  $('.messageRendu').hide();
-  $('.boiChoi').hide();
-  $('.infoPiecesRendues').text(' • ' + (piecesTotal[y]-piecesDispo[y]) +' pieces de ' + piecesExist[y]);
-});*/
-/*renduMonnaie(coins_ser,prix);*/
 
-
- /*renduMonnaie pour calculer la monnaie à rendre.
-Les tableaux me permettent de définir quels types de pièces rendre
-avec la quantité dispo pour chacune.
-La boucle while pour savoir que si le billet est dispo et qu'il est > au montant à rendre, il pioche dedans,
-la boucle redémmare jusqu'à...*/
-/*
-function renduMonnaie (sommeEntree, cout)
-{ 
-  let piecesExistantes = [200,100,50,20,10];
-  let piecesDispo = [5,10,10,10,10];
-  let pieces = [];
-  let monnaie = (sommeEntree - cout);
-    
-      while (monnaie > 0)
-        {
-          if(monnaie >= 200 && piecesDispo[0] > 0)
-            {
-              pieces.push(200);
-              monnaie=monnaie-200;
-              piecesDispo[0] = piecesDispo[0]-1;
-            }
-          else if (monnaie >= 100 && piecesDispo[1] > 0)
-            {
-              pieces.push(100);
-             monnaie=monnaie-100;
-               piecesDispo[1] = piecesDispo[1]-1;
-            }
-          else if (monnaie >= 50 && piecesDispo[2] > 0)
-            {
-              pieces.push(50);
-             monnaie=monnaie-50;
-               piecesDispo[2] = piecesDispo[2]-1;
-            }
-          else if (monnaie >= 20 && piecesDispo[3] > 0)
-            {
-              pieces.push(20);
-             monnaie=monnaie-20;
-               piecesDispo[3] = piecesDispo[3]-1;
-            } 
-           else if (monnaie >= 10 && piecesDispo[4] > 0)
-            {
-              pieces.push(10);
-             monnaie=monnaie-10;
-               piecesDispo[4] = piecesDispo[4]-1;
-            };
-          
-         
-        };
-  console.log(pieces);
-  console.log(piecesDispo);
-  console.log(monnaie);
-   return sommeEntree - cout;
-};
-let monnaieRendue = renduMonnaie(coins_ser,prix);*/
-
-//$('.aRendre p').html("Montant à rendre " + monnaieRendue );
 
 ///////////////////////////  FUNCTION TO RESET ALL ///////
     function resetAll(){
