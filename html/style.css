@@ -74,6 +74,35 @@ body{
 }
 .btn-valider{
 	margin-left: 550px;
-	margin-top: -1630px; 
+	margin-top: -1630px;
+}
+/*---------------------------------------------------------------------*/
+
+/*-------------------------------Drink-------------------------------*/
+
+.drink{
+	opacity: 0;
+	margin-top: -350px;
+	margin-left: 435px;
+
+}
+.espresso{
+	opacity: 0;
+	margin-top: -350px;
+	margin-left: 40px;
+}
+.latte{
+	opacity: 0;
+	margin-top: -535px;
+}
+.tea{
+	opacity: 0;
+	margin-top: -512px;
+	margin-left: 31px;
+}
+.chocolate{
+	opacity: 0;
+	margin-top: -549px;
+	margin-left: -10px;
 }
 /*---------------------------------------------------------------------*/
