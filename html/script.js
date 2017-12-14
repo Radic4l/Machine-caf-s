@@ -213,8 +213,8 @@ let coins_ser = 0;
       /*renduMonnaie(coins_ser,prix)*/
     });
   let piecesExist = [2,1,0.50,0.20,0.10,0.05]; // liste de pieces disponible
-  let piecesDispo = [5,5,5,5,5,5] // numero de pieces disponible de chaque valeur
-  let piecesTotal = [5,5,5,5,5,5] // triche pour aficher le numero de pieces rendu
+  let piecesDispo = [50,50,50,50,50,50] // numero de pieces disponible de chaque valeur
+  let piecesTotal = [50,50,50,50,50,50] // triche pour aficher le numero de pieces rendu
   let pieces = []; // liste de pieces rendu
 function renduMonnaie(sommeEntree, cout){
 
@@ -257,6 +257,7 @@ function renduMonnaie(sommeEntree, cout){
                   $('.pieces').css('opacity',1);
         }
       }
+<<<<<<< HEAD
       if (drinkSelect === "latte") {
         $("#Mug").css("opacity", 1)
         $("#latte").css("opacity", 1);
@@ -277,6 +278,17 @@ function renduMonnaie(sommeEntree, cout){
         $("#chocolate").css("opacity", 1);
         console.log(drinkSelect);
       }
+=======
+      for (let x = 0; x < piecesExist.length; x++){
+        if (piecesDispo[x] === 0){
+            console.log('Pieces de ' + piecesExist[x] + ' indisponible');
+        }
+        else{
+            $('.cinqCts p').text(piecesDispo[5]);
+            $('.cinquanteCts').append("<p>"+piecesDispo[2]+"</p>");
+        } 
+    }
+>>>>>>> 71ff65947a24e0a86d9c9ec0c126ed30ed7292f5
   });
 
 
@@ -305,18 +317,66 @@ function renduMonnaie(sommeEntree, cout){
       $('.reset').attr('src','img/Vue1/button-cancel.png')
     })
 
+<<<<<<< HEAD
     $(".boisson").click(function(){
       resetAll();
     });
 /////////////////Axel/////////////////
+=======
+>>>>>>> 71ff65947a24e0a86d9c9ec0c126ed30ed7292f5
 
 
 
-/////////////////Anna/////////////////
+
+/////////////////SCRIPT VUE 2/////////////////
+    
+  $('.rempMon').click(function(){
+    $('.cinqCts').text('50');
+    $('.dixCts').text('50');
+    $('.vingtCts').text('50');
+    $('.cinquanteCts').text('50');
+    $('.unEu').text('50');
+    $('.deuxEu').text('50');
+  })
+
+    $('.rempIng').mousedown(function(){
+        $('.rempIng').attr('src','img/Vue1/Selection_sucre/button-+-active.png')
+      })
+      $('.rempIng').mouseup(function(){
+        $('.rempIng').attr('src','img/Vue1/Selection_sucre/button-+-inactive.png')
+      })
+      $('.rempMon').mousedown(function(){
+        $('.rempMon').attr('src','img/Vue1/Selection_sucre/button-+-active.png')
+      })
+      $('.rempMon').mouseup(function(){
+        $('.rempMon').attr('src','img/Vue1/Selection_sucre/button-+-inactive.png')
+      })
 
 
 
-/////////////////Romain/////////////////
+    function stock (drink,validated){
+        if (drink === latte && validated === true){
+            $('.stockeau').remove(4);
+            $('.stocklait').remove(1);
+            $('.stockcafe').remove(1);
+            $('.stockmug').remove(1);
+        }else if(drink === expresso && validated === true){
+            $('.stockeau').remove(1);
+            $('.stockcafe').remove(2);
+            $('.stockmug').remove(1);
+    
+        }else if(drink === tea && validated === true){
+            $('.stockeau').remove(4);
+            $('.stocktea').remove(1);
+            $('.stockmug').remove(1);
+        } else if(drink === chocolat && validated === true){
+            $('.stockeau').remove(4);
+            $('.stockchoco').remove(1);
+            $('.stocklait').remove(2);
+            $('.stockmug').remove(1);
+        }
+    };
+
 
 
 });
