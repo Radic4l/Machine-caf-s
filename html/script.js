@@ -41,7 +41,7 @@ $(document).ready(function(){
 ////////////////// BUTTON TO SELECT DRINK /////
     $('.btnLat').click(function(){
         selectDrink(true, 'latte');
-        $('.boiChoi').text('Latte – 0.60 cts');
+        $('.boiChoi').text('Latte – 0.50 cts');
         $('.coins input').prop('disabled', false);
     });
     $('.btnLat').dblclick(function(){    
@@ -61,7 +61,7 @@ $(document).ready(function(){
     });
     $('.btnChoc').click(function(){
         selectDrink(true, 'chocolat');
-        $('.boiChoi').text('Chocolat – 0.60 cts');
+        $('.boiChoi').text('Chocolat – 0.50 cts');
         $('.coins input').prop('disabled', false);
     });
     $('.btnChoc').dblclick(function(){    
@@ -180,51 +180,49 @@ let prix = 0.50;
     $('.1euro').click(function(){
       addCoin('1euro');
       $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
+      renduMonnaie(coins_ser,prix)
     });
 
     $('.50cts').click(function(){
       addCoin('50cts');
       $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
+      renduMonnaie(coins_ser,prix)
     });
     $('.20cts').click(function(){
       addCoin('20cts');
       $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
+      renduMonnaie(coins_ser,prix)
     });
     $('.10cts').click(function(){
       addCoin('10cts');
       $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
+      renduMonnaie(coins_ser,prix)
     });
 
     $('.5cts').click(function(){
       addCoin('5cts');
       $('.affPieces').text('Montant inséré: ' +(coins_ser).toFixed(2)+ ' €');
+      renduMonnaie(coins_ser,prix)
     });
-
-function renduMonnaie(sommeEntree, cout)
-{
-  let piecesExist = [200,100,50,20,10,5]; // liste de pieces disponible
+  let piecesExist = [2,1,0.50,0.20,0.10,0.05]; // liste de pieces disponible
   let piecesDispo = [5,5,5,5,5,5] // numero de pieces disponible de chaque valeur
   let piecesTotal = [5,5,5,5,5,5] // triche pour aficher le numero de pieces rendu
   let pieces = []; // liste de pieces rendu
-  let monnaie = (sommeEntree - cout);
-
+function renduMonnaie(sommeEntree, cout){
   
-    for (let i = 0; i < piecesDispo.length; i++) 
-    {
-      while (monnaie >= piecesExist[i] && piecesDispo[i] > 0) 
-        {
+  let monnaie = (coins_ser - prix);
+    for (let i = 0; i < piecesDispo.length; i++){
+      while (monnaie >= piecesExist[i] && piecesDispo[i] > 0){
           pieces.push(piecesExist[i]);
           monnaie = monnaie - piecesExist[i];
           piecesDispo[i] -= 1;
         }     
     } 
     /////////// Info de pieces rendu //////
-    for(y = 0; y< piecesTotal.length; y++)
-    {
+    /*for(y = 0; y< piecesTotal.length; y++){
         console.log(' • ' + (piecesTotal[y]-piecesDispo[y]) +' pieces de ' + piecesExist[y]);
-    }
-    
- ////////////// Info de pieces restantes ////////
+    }*/
+  ////////////// Info de pieces restantes ////////
   for (let x = 0; x < piecesExist.length; x++) 
     {
       if (piecesDispo[x] === 0)
@@ -236,7 +234,27 @@ function renduMonnaie(sommeEntree, cout)
           console.log(piecesDispo[x] +' Pieces de ' + piecesExist[x] + ' encore disponible');
         } 
     }
+    
 }
+    
+    $('.btn-valider').click(function(){
+      $('.messagePieces').hide();
+      $('.messageRendu').hide();
+      $('.boiChoi').hide();
+      for(let y = 0; y< piecesTotal.length; y++){
+        console.log(' • ' + (piecesTotal[y]-piecesDispo[y]) +' pieces de ' + piecesExist[y]);
+        if((piecesTotal[y]-piecesDispo[y])>0){
+          $('.messageBoisson').append("<p class='infoPiecesRendues'>' • '" + (piecesTotal[y]-piecesDispo[y]) +"' pieces de ' "+ piecesExist[y]);
+        
+        }
+      }
+  });
+/*$('.btn-valider').click(function(){
+  $('.messagePieces').hide();
+  $('.messageRendu').hide();
+  $('.boiChoi').hide();
+  $('.infoPiecesRendues').text(' • ' + (piecesTotal[y]-piecesDispo[y]) +' pieces de ' + piecesExist[y]);
+});*/
 /*renduMonnaie(coins_ser,prix);*/
 
 
