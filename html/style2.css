@@ -18,3 +18,38 @@ body{
 	margin-left: 250px;
 	margin-top: 190px;
 }
+.vue1{
+	margin-left: 200px;
+	margin-top: 150px;
+}
+
+.cinqCts{
+	margin-top: -225px;
+	margin-left: 335px;
+	color: white;
+}
+.dixCts{
+	margin-top: -225px;
+	color: white;
+	margin-left: 440px;
+}
+.vingtCts{
+	margin-top: -225px;
+	color: white;
+	margin-left: 545px;
+}
+.cinquanteCts{
+	margin-top: -225px;
+	color: white;
+	margin-left: 650px;
+}
+.unEu{
+	margin-top: -225px;
+	color: white;
+	margin-left: 755px;
+}
+.deuxEu{
+	margin-top: -225px;
+	color: white;
+	margin-left: 875px;
+}
