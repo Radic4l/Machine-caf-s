@@ -87,32 +87,33 @@ body{
 
 /*-------------------------------Drink-------------------------------*/
 
-.drink{
+#Mug{
 	opacity: 0;
 	margin-top: -350px;
 	margin-left: 435px;
 
 }
-.espresso{
+#espresso{
 	opacity: 0;
 	margin-top: -350px;
-	margin-left: 40px;
+	margin-left: 475px;
 }
-.latte{
+#latte{
 	opacity: 0;
 	margin-top: -535px;
+	margin-left: 435px;
 }
-.tea{
+#tea{
 	opacity: 0;
 	margin-top: -512px;
-	margin-left: 31px;
+	margin-left: 467px;
 }
-.chocolate{
+#chocolate{
 	opacity: 0;
 	margin-top: -549px;
-	margin-left: -10px;
+	margin-left: 429px;
 }
 .prendMoney{
 	z-index: 1;
+	/*---------------------------------------------------------------------*/
 }
-/*---------------------------------------------------------------------*/

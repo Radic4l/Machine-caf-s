@@ -1,5 +1,7 @@
 $(document).ready(function(){
 /////////////////Sergio/////////////////
+// $(".boisson").css("opacity", 1);
+
     function selectDrink(doSelect,drink){
           if (doSelect === true && drink === 'latte'){
               $('.btnLat').attr("src", "img/Vue1/Latte_click.png");
@@ -39,42 +41,48 @@ $(document).ready(function(){
           }
     };
 ////////////////// BUTTON TO SELECT DRINK /////
+let drinkSelect;
+
     $('.btnLat').click(function(){
         selectDrink(true, 'latte');
+        drinkSelect = "latte";
         $('.boiChoi').text('Latte – 0.50 cts');
         $('.coins input').prop('disabled', false);
     });
-    $('.btnLat').dblclick(function(){    
+    $('.btnLat').dblclick(function(){
         selectDrink(false, 'latte');// Implémentez​ ​une​ ​fonction​ ​​resetDrink()​ ​​qui​ ​désélectionne​ ​toutes​ ​les​ ​boissons: le dblclick permet de reset les drink//
         $('.boiChoi').text(' ');
         $('.coins input').prop('disabled', true);
     });
     $('.btnExp').click(function(){
         selectDrink(true, 'expresso');
+        drinkSelect = "espresso";
         $('.boiChoi').text('Expresso – 0.50 cts');
         $('.coins input').prop('disabled', false);
     });
-    $('.btnExp').dblclick(function(){    
+    $('.btnExp').dblclick(function(){
         selectDrink(false, 'expresso');
         $('.boiChoi').text(' ');
         $('.coins input').prop('disabled', true);
     });
     $('.btnChoc').click(function(){
         selectDrink(true, 'chocolat');
+        drinkSelect = "chocolate";
         $('.boiChoi').text('Chocolat – 0.50 cts');
         $('.coins input').prop('disabled', false);
     });
-    $('.btnChoc').dblclick(function(){    
+    $('.btnChoc').dblclick(function(){
         selectDrink(false, 'chocolat');
         $('.boiChoi').text(' ');
         $('.coins input').prop('disabled', true);
     });
     $('.btnThe').click(function(){
         selectDrink(true, 'tea');
+        drinkSelect = "tea";
         $('.boiChoi').text('Thé – 0.50 cts');
         $('.coins input').prop('disabled', false);
     });
-    $('.btnThe').dblclick(function(){    
+    $('.btnThe').dblclick(function(){
         selectDrink(false, 'tea');
         $('.boiChoi').text(' ');
         $('.coins input').prop('disabled', true);
@@ -127,24 +135,24 @@ $(document).ready(function(){
           $('.sugar2').css('opacity', 0);
         };
         if (sugar === 2){
-        
+
           $('.sugar3').css('opacity', 0);
         };
         if (sugar === 3){
-        
+
           $('.sugar4').css('opacity', 0);
         };
         if (sugar === 4){
-          
+
           $('.sugar5').css('opacity', 0);
         };
-        
+
       }
       console.log(sugar);
     });
 ////////////////////// ADD COINS/////////
 let prix = 0.50;
-let coins_ser = 0; 
+let coins_ser = 0;
 
     function addCoin(coin){
       if (coin === '2euros'){
@@ -209,21 +217,21 @@ let coins_ser = 0;
   let piecesTotal = [5,5,5,5,5,5] // triche pour aficher le numero de pieces rendu
   let pieces = []; // liste de pieces rendu
 function renduMonnaie(sommeEntree, cout){
-  
+
   let monnaie = (coins_ser - prix);
     for (let i = 0; i < piecesDispo.length; i++){
       while (monnaie >= piecesExist[i] && piecesDispo[i] > 0){
           pieces.push(piecesExist[i]);
           monnaie = monnaie - piecesExist[i];
           piecesDispo[i] -= 1;
-        }     
-    } 
+        }
+    }
     /////////// Info de pieces rendu //////
     for(y = 0; y< piecesTotal.length; y++){
         console.log(' • ' + (piecesTotal[y]-piecesDispo[y]) +' pieces de ' + piecesExist[y]);
     }
   ////////////// Info de pieces restantes ////////
-  for (let x = 0; x < piecesExist.length; x++) 
+  for (let x = 0; x < piecesExist.length; x++)
     {
       if (piecesDispo[x] === 0)
         {
@@ -232,21 +240,42 @@ function renduMonnaie(sommeEntree, cout){
       else
         {
           console.log(piecesDispo[x] +' Pieces de ' + piecesExist[x] + ' encore disponible');
-        } 
+        }
     }
-    
+
 }
-    
+
     $('.btn-valider').click(function(){
       $('.messagePieces').hide();
       $('.messageRendu').hide();
       $('.boiChoi').hide();
+      $('')
       renduMonnaie(coins_ser,prix);
       for(let y = 0; y< piecesTotal.length; y++){
         if((piecesTotal[y]-piecesDispo[y])>0){
           $('.messageBoisson').append("<p class='infoPiecesRendues'>' • '" + (piecesTotal[y]-piecesDispo[y]) +"' pieces de ' "+ piecesExist[y]);
                   $('.pieces').css('opacity',1);
         }
+      }
+      if (drinkSelect === "latte") {
+        $("#Mug").css("opacity", 1)
+        $("#latte").css("opacity", 1);
+        console.log(drinkSelect);
+      }
+      if (drinkSelect === "espresso") {
+        $("#Mug").css("opacity", 1)
+        $("#espresso").css("opacity", 1);
+        console.log(drinkSelect);
+      }
+      if (drinkSelect === "tea") {
+        $("#Mug").css("opacity", 1)
+        $("#tea").css("opacity", 1);
+        console.log(drinkSelect);
+      }
+      if (drinkSelect === "chocolate") {
+        $("#Mug").css("opacity", 1)
+        $("#chocolate").css("opacity", 1);
+        console.log(drinkSelect);
       }
   });
 
@@ -262,7 +291,8 @@ function renduMonnaie(sommeEntree, cout){
         $('.sugar1, .sugar2, .sugar3, .sugar4, .sugar5').css('opacity', 0);
         aRendre = 0;
         $('.monnaie').text('');
-
+        $(".boisson").css("opacity", 0)
+        $(".infoPiecesRendues").text('')
     }
     $('.reset').click(function(){
         resetAll();
@@ -275,6 +305,9 @@ function renduMonnaie(sommeEntree, cout){
       $('.reset').attr('src','img/Vue1/button-cancel.png')
     })
 
+    $(".boisson").click(function(){
+      resetAll();
+    });
 /////////////////Axel/////////////////
 
 
