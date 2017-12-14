@@ -257,7 +257,6 @@ function renduMonnaie(sommeEntree, cout){
                   $('.pieces').css('opacity',1);
         }
       }
-<<<<<<< HEAD
       if (drinkSelect === "latte") {
         $("#Mug").css("opacity", 1)
         $("#latte").css("opacity", 1);
@@ -278,7 +277,7 @@ function renduMonnaie(sommeEntree, cout){
         $("#chocolate").css("opacity", 1);
         console.log(drinkSelect);
       }
-=======
+
       for (let x = 0; x < piecesExist.length; x++){
         if (piecesDispo[x] === 0){
             console.log('Pieces de ' + piecesExist[x] + ' indisponible');
@@ -288,7 +287,6 @@ function renduMonnaie(sommeEntree, cout){
             $('.cinquanteCts').append("<p>"+piecesDispo[2]+"</p>");
         } 
     }
->>>>>>> 71ff65947a24e0a86d9c9ec0c126ed30ed7292f5
   });
 
 
@@ -317,13 +315,11 @@ function renduMonnaie(sommeEntree, cout){
       $('.reset').attr('src','img/Vue1/button-cancel.png')
     })
 
-<<<<<<< HEAD
+
     $(".boisson").click(function(){
       resetAll();
     });
 /////////////////Axel/////////////////
-=======
->>>>>>> 71ff65947a24e0a86d9c9ec0c126ed30ed7292f5
 
 
 
