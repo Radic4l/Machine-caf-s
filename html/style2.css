@@ -1,0 +1,20 @@
+
+body{
+	background-image: url('img/Interface/Vue2.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+
+}
+.vue1{
+	margin-left: 205px;
+	margin-top: 850px;
+}
+.rempIng{
+	margin-left: 740px;
+	margin-top: 385px;
+	height: 75px;
+}
+.rempMon{
+	margin-left: 250px;
+	margin-top: 190px;
+}
